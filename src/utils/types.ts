@@ -15,5 +15,5 @@ export enum BeerBrands {
 export enum Size {
   Lata = '355',
   LongNeck = '330',
-  Garrafa = '600'
+  Garrafa = '600',
 }

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import ItemRow from '../../components/ItemRow/ItemRow';
-import { Box, Button, FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import './Calculator.scss';
 import { GlobalContext } from '../../context/GlobalContext';
 import { DrinkTypes } from '../../utils/types';
 import { calculateMyBeer } from '../../utils/helpers';
 import styled from 'styled-components';
-import { grey5 } from '../../utils/colors';
+import { grey3, grey5 } from '../../utils/colors';
 import { Edit } from 'iconsax-react';
 import SizeOptions from '../../components/Radio/Sizes';
 
@@ -17,28 +17,69 @@ const StyledBox = styled(Box)`
   border-radius: 12px
 `
 
+const StyledDrinkBox = styled(Box)`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: solid 1px ${grey3};
+  border-radius: 12px;
+  padding: 12px 24px;
+
+  h3{
+    margin: 0;
+  }
+`
+
 const Calculator: React.FunctionComponent<Props> = (
   props: Props
 ) => {
-  const { invitees, duration, myBeer, setSize, setModalOn, size, level } = React.useContext(GlobalContext)
+  const { invitees, duration, myBeer, setModalOn, size, level } = React.useContext(GlobalContext)
 
   return (
     <StyledBox className='calculator'>
       <Box display={'flex'} flexDirection={'column'} margin={'50px 0'} gap={'50px'} width={'65%'}>
-        <Box display={'flex'} flexDirection={'column'}>
-          <Box display={'flex'} gap={'30px'} alignItems={'flex-end'} justifyContent={'space-between'}>
+        <StyledDrinkBox>
+          <Box display={'flex'} flexDirection={'row'} gap={'30px'} alignItems={'flex-end'} justifyContent={'space-between'}>
             <ItemRow setModal={props.setModalOn} type={DrinkTypes.Beer} beersQty={calculateMyBeer(invitees, duration, size, level)} myBeer={myBeer} size={size} />
             {myBeer ?
               <Box display={'flex'} flexDirection={'column'} alignSelf={'end'}>
                 <Box display={'flex'} alignItems={'center'} gap={'10px'} justifyContent={'center'}>
-                <h2>{myBeer}</h2>
-                <Edit onClick={() => setModalOn(true)}/>
+                  <h3>{myBeer}</h3>
+                  <Edit onClick={() => setModalOn(true)} />
                 </Box>
                 <SizeOptions />
               </Box>
               : null}
           </Box>
-        </Box>
+        </StyledDrinkBox>
+        <StyledDrinkBox>
+          <Box display={'flex'} flexDirection={'row'} gap={'30px'} alignItems={'flex-end'} justifyContent={'space-between'}>
+            <ItemRow setModal={props.setModalOn} type={DrinkTypes.Beer} beersQty={calculateMyBeer(invitees, duration, size, level)} myBeer={myBeer} size={size} />
+            {myBeer ?
+              <Box display={'flex'} flexDirection={'column'} alignSelf={'end'}>
+                <Box display={'flex'} alignItems={'center'} gap={'10px'} justifyContent={'center'}>
+                  <h3>{myBeer}</h3>
+                  <Edit onClick={() => setModalOn(true)} />
+                </Box>
+                <SizeOptions />
+              </Box>
+              : null}
+          </Box>
+        </StyledDrinkBox>
+        <StyledDrinkBox>
+          <Box display={'flex'} flexDirection={'row'} gap={'30px'} alignItems={'flex-end'} justifyContent={'space-between'}>
+            <ItemRow setModal={props.setModalOn} type={DrinkTypes.Beer} beersQty={calculateMyBeer(invitees, duration, size, level)} myBeer={myBeer} size={size} />
+            {myBeer ?
+              <Box display={'flex'} flexDirection={'column'} alignSelf={'end'}>
+                <Box display={'flex'} alignItems={'center'} gap={'10px'} justifyContent={'center'}>
+                  <h3>{myBeer}</h3>
+                  <Edit onClick={() => setModalOn(true)} />
+                </Box>
+                <SizeOptions />
+              </Box>
+              : null}
+          </Box>
+        </StyledDrinkBox>
         <Box display={'flex'}>
           <Button
             className='add-other'

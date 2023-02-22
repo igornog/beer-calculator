@@ -1,13 +1,26 @@
+* {
+  animation: 3s linear 0.1s;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .App {
+  text-align: center;
   padding: 2rem 5rem;
   font-family: 'Inter';
   min-height: 100%;
   background-color: #e7e8e9;
 
+  input {
+    text-align: center;
+  }
+
   header {
     img {
       transition: 3s ease-in-out all;
-      animation: shake 2s;
+      animation: shake 1.75s;
       animation-iteration-count: infinite;
     }
 
@@ -29,12 +42,4 @@
       }
     }
   }
-}
-
-* {
-  animation: 3s linear 0.1s;
-}
-
-*::-webkit-scrollbar {
-  display: none;
 }

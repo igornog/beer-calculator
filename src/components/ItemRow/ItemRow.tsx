@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Box, Button, TextField } from '@mui/material';
 import { DrinkTypes } from '../../utils/types';
 import { GlobalContext } from '../../context/GlobalContext';
+
 const ItemRow: React.FunctionComponent<Props> = (
   props: Props
 ) => {

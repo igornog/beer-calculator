@@ -1,4 +1,4 @@
-import { Box, Fade, TextField, Zoom } from '@mui/material';
+import { Box, TextField, Zoom } from '@mui/material';
 import * as React from 'react';
 import { GlobalContext } from '../../context/GlobalContext';
 import DurationSlider from '../../components/Slider/DurationSlider';

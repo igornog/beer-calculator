@@ -10,7 +10,7 @@ const marks = Array.from(Array(10).keys()).map((key) => ({
 const DurationSlider: React.FunctionComponent<Props> = (
   props: Props
 ) => {
-  
+
   const handleChange = (event: Event, newValue: number | number[]) => {
     props.setDuration(newValue as number);
   };

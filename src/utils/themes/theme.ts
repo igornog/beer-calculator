@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material'
-import '../styles/layout.css'
-import { black, green, grey, red } from '../colors'
+import { createTheme } from '@mui/material';
+import '../styles/layout.css';
+import { black, green, grey, red } from '../colors';
 
 export const myAppTheme = createTheme({
   palette: {
@@ -88,6 +88,6 @@ export const myAppTheme = createTheme({
       textTransform: 'none',
     },
   },
-})
+});
 
-export const boxShadow = 'rgb(0 0 0 / 10%) 0px 15px 50px 0px'
+export const boxShadow = 'rgb(0 0 0 / 10%) 0px 15px 50px 0px';

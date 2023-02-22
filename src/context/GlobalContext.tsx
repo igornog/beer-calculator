@@ -1,5 +1,4 @@
 import React, { useState, createContext } from "react";
-import { Size } from "../utils/types";
 
 interface GlobalProviderProps {
   children: React.ReactNode
@@ -8,6 +7,9 @@ interface GlobalProviderProps {
 export const GlobalContext = createContext({
   modalOn: false,
   setModalOn: (modalOn: boolean) => { },
+
+  cartOn: false,
+  setCartOn: (cartOn: boolean) => { },
 
   invitees: 0,
   setInvitees: (invitees: number) => { },
@@ -31,6 +33,7 @@ export const GlobalContext = createContext({
 
 export const GlobalProvider = ({ children }: GlobalProviderProps) => {
   const [modalOn, setModalOn] = useState(false);
+  const [cartOn, setCartOn] = useState(false);
   const [invitees, setInvitees] = useState(0);
   const [duration, setDuration] = useState(4);
   const [preferences, setPreferences] = useState(0.50);
@@ -42,6 +45,8 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
     <GlobalContext.Provider value={{
       modalOn,
       setModalOn,
+      cartOn,
+      setCartOn,
       invitees,
       setInvitees,
       duration,

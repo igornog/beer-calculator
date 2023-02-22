@@ -1,14 +1,12 @@
 
-import { Box, Button, Drawer, TextField } from '@mui/material';
-import { useContext } from 'react'
+import { Box, Drawer } from '@mui/material';
 import { convertHexToRGBA } from '../../utils/helpers';
 import { black } from '../../utils/colors';
 import BrandCard from '../Card/BrandCard';
-import { GlobalContext } from '../../context/GlobalContext';
 import React from 'react';
 import { BeerBrands } from '../../utils/types';
 
-const ProductSelectionModal: React.FunctionComponent<Props> = (
+const ProductSelectionDrawer: React.FunctionComponent<Props> = (
   props: Props
 ) => {
 
@@ -49,4 +47,4 @@ interface Props {
   modalOn: boolean
 }
 
-export default ProductSelectionModal
+export default ProductSelectionDrawer
