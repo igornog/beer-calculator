@@ -36,7 +36,7 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
   const [preferences, setPreferences] = useState(0.50);
   const [level, setLevel] = useState(2);
   const [myBeer, setMyBeer] = useState('');
-  const [size, setSize] = useState('');
+  const [size, setSize] = useState('355');
 
   return (
     <GlobalContext.Provider value={{

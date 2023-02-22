@@ -16,7 +16,7 @@ const SizeOptions: React.FunctionComponent<Props> = (
     <FormControl>
       {/* <FormLabel id="radio-buttons-group-label">Tamanho</FormLabel> */}
       <RadioGroup
-        defaultValue="Lata"
+        defaultValue="355"
         value={size}
         onChange={handleChange}
       >

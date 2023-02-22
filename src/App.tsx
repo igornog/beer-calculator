@@ -6,7 +6,7 @@ import Calculator from './features/Calculator/Calculator';
 import ProductSelectionModal from './components/Modal/ProductSelectionModal';
 import { GlobalContext } from './context/GlobalContext'
 import React from 'react';
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 
 const App: React.FunctionComponent = () => {
   const { modalOn, setModalOn, invitees } = React.useContext(GlobalContext)

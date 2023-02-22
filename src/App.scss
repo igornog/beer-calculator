@@ -2,14 +2,39 @@
   padding: 2rem 5rem;
   font-family: 'Inter';
   min-height: 100%;
-  background-color: #E7E8E9;
+  background-color: #e7e8e9;
+
+  header {
+    img {
+      transition: 3s ease-in-out all;
+      animation: shake 2s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-4deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      75% {
+        transform: rotate(4deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  }
 }
 
-*{
-  transition: all .4s ease;
+* {
+  animation: 3s linear 0.1s;
 }
 
-*::-webkit-scrollbar { 
+*::-webkit-scrollbar {
   display: none;
 }
-
