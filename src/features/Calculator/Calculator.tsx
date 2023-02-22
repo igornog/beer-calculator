@@ -7,6 +7,8 @@ import { DrinkTypes } from '../../utils/types';
 import { calculateMyBeer } from '../../utils/helpers';
 import styled from 'styled-components';
 import { grey5 } from '../../utils/colors';
+import { Edit } from 'iconsax-react';
+import SizeOptions from '../../components/Radio/Sizes';
 
 const StyledBox = styled(Box)`
   display: flex;
@@ -18,36 +20,24 @@ const StyledBox = styled(Box)`
 const Calculator: React.FunctionComponent<Props> = (
   props: Props
 ) => {
-  const { invitees, duration, myBeer, setSize, size, level } = React.useContext(GlobalContext)
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSize(event.target.value);
-  };
+  const { invitees, duration, myBeer, setSize, setModalOn, size, level } = React.useContext(GlobalContext)
 
   return (
     <StyledBox className='calculator'>
       <Box display={'flex'} flexDirection={'column'} margin={'50px 0'} gap={'50px'} width={'65%'}>
         <Box display={'flex'} flexDirection={'column'}>
-          <ItemRow setModal={props.setModalOn} type={DrinkTypes.Beer} beersQty={calculateMyBeer(invitees, duration, size, level)} />
-          {myBeer ?
-            <Box display={'flex'} flexDirection={'column'} alignSelf={'end'}>
-              <p>{myBeer}</p>
-              <FormControl>
-                {/* <FormLabel id="radio-buttons-group-label">Tamanho</FormLabel> */}
-                <RadioGroup
-                  defaultValue="Lata"
-                  value={size}
-                  onChange={handleChange}
-                >
-                  <Box display={'flex'} flexDirection={'row'}>
-                    <FormControlLabel value="355" control={<Radio />} label="Lata (355ml)" />
-                    <FormControlLabel value="330" control={<Radio />} label="Long Neck (330ml)" />
-                    <FormControlLabel value="600" control={<Radio />} label="Garrafa (600ml)" />
-                  </Box>
-                </RadioGroup>
-              </FormControl>
-            </Box>
-            : null}
+          <Box display={'flex'} gap={'30px'} alignItems={'flex-end'} justifyContent={'space-between'}>
+            <ItemRow setModal={props.setModalOn} type={DrinkTypes.Beer} beersQty={calculateMyBeer(invitees, duration, size, level)} myBeer={myBeer} size={size} />
+            {myBeer ?
+              <Box display={'flex'} flexDirection={'column'} alignSelf={'end'}>
+                <Box display={'flex'} alignItems={'center'} gap={'10px'} justifyContent={'center'}>
+                <h2>{myBeer}</h2>
+                <Edit onClick={() => setModalOn(true)}/>
+                </Box>
+                <SizeOptions />
+              </Box>
+              : null}
+          </Box>
         </Box>
         <Box display={'flex'}>
           <Button

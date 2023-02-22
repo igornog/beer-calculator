@@ -1,3 +1,6 @@
+import { TooltipProps, Tooltip, tooltipClasses } from "@mui/material"
+import styled from "styled-components"
+
 export const convertHexToRGBA = (hexCode: string, opacity = 1) => {
   let hex = hexCode.replace('#', '')
 
@@ -15,6 +18,17 @@ export const convertHexToRGBA = (hexCode: string, opacity = 1) => {
 
   return `rgba(${r},${g},${b},${opacity})`
 }
+
+export const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.common.black,
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.black,
+  },
+}));
 
 export const calculateMyBeer = (invitees: number, duration: number, size: string, level: number) => {
   let mlPerPerson = 355

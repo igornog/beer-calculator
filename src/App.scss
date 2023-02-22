@@ -5,6 +5,10 @@
   background-color: #E7E8E9;
 }
 
+*{
+  transition: all .4s ease;
+}
+
 *::-webkit-scrollbar { 
   display: none;
 }

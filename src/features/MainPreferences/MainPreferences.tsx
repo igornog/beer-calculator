@@ -1,4 +1,4 @@
-import { Box, TextField } from '@mui/material';
+import { Box, Fade, TextField, Zoom } from '@mui/material';
 import * as React from 'react';
 import { GlobalContext } from '../../context/GlobalContext';
 import DurationSlider from '../../components/Slider/DurationSlider';
@@ -6,6 +6,7 @@ import PreferenceSlider from '../../components/Slider/PreferenceSlider';
 import styled from 'styled-components'
 import DrinkerLevelSlider from '../../components/Slider/DrinkerLevelSlider';
 import { grey5 } from '../../utils/colors';
+import Tooltip from '@mui/material/Tooltip';
 
 const StyledBox = styled(Box)`
   display: flex;
@@ -15,7 +16,11 @@ const StyledBox = styled(Box)`
   align-items: center;
   justify-content: center;
   border: solid 1px ${grey5};
-  border-radius: 12px
+  border-radius: 12px;
+  
+  h4 {
+    margin-top: 0;
+  }
 `
 const StyledTextField = styled(TextField)`
   border-radius: 4px;
@@ -38,20 +43,44 @@ const MainPreferences: React.FunctionComponent = () => {
         />
       </StyledBox>
 
-      <StyledBox >
-        <h4>Duração do churras (horas)</h4>
-        <DurationSlider setDuration={setDuration} />
-      </StyledBox>
+      <Tooltip
+        TransitionComponent={Zoom}
+        TransitionProps={{ timeout: 600 }}
+        placement="top"
+        title='Escolha a duração do churras'
+        arrow
+      >
+        <StyledBox>
+          <h4>Duração do churras (horas)</h4>
+          <DurationSlider setDuration={setDuration} />
+        </StyledBox>
+      </Tooltip>
 
-      <StyledBox >
-        <h4>Preferências</h4>
-        <PreferenceSlider />
-      </StyledBox>
+      <Tooltip
+        TransitionComponent={Zoom}
+        TransitionProps={{ timeout: 600 }}
+        placement="top"
+        title='Escolha a preferência da galera'
+        arrow
+      >
+        <StyledBox >
+          <h4>Preferências</h4>
+          <PreferenceSlider />
+        </StyledBox>
+      </Tooltip>
 
-      <StyledBox >
-        <h4>Nível</h4>
-        <DrinkerLevelSlider setLevel={setLevel} />
-      </StyledBox>
+      <Tooltip
+        TransitionComponent={Zoom}
+        TransitionProps={{ timeout: 600 }}
+        placement="top"
+        title='Escolha o nível do rolê'
+        arrow
+      >
+        <StyledBox >
+          <h4>Nível</h4>
+          <DrinkerLevelSlider setLevel={setLevel} />
+        </StyledBox>
+      </Tooltip>
 
     </Box>
   )
