@@ -6,7 +6,7 @@ import { GlobalContext } from '../../context/GlobalContext';
 import { DrinkTypes } from '../../utils/types';
 import { calculateMyBeer } from '../../utils/helpers';
 import styled from 'styled-components';
-import { grey3, grey5 } from '../../utils/colors';
+import { grey3, grey5, white } from '../../utils/colors';
 import { Edit } from 'iconsax-react';
 import SizeOptions from '../../components/Radio/Sizes';
 
@@ -16,6 +16,15 @@ const StyledBox = styled(Box)`
   border: solid 1px ${grey5};
   border-radius: 12px
 `
+
+const StyledArticle = styled(Box)`
+  background-color: ${white};
+  width: 35%;
+  margin: 0 0 0 2rem;
+  padding: 0 2rem;
+  border-radius: 12px;
+`
+
 
 const StyledDrinkBox = styled(Box)`
   display: flex;
@@ -89,13 +98,13 @@ const Calculator: React.FunctionComponent<Props> = (
           </Button>
         </Box>
       </Box>
-      <Box width={'35%'} padding={'0 2rem'} textAlign={'justify'}>
+      <StyledArticle >
         <article>
           <h2>Como nossa calculadora funciona?</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque pellentesque at amet congue integer eget. At a, ante nullam tempus, mattis in aenean a. Volutpat bibendum sit egestas ultrices  Neque pellentesque at amet congue integer eget. At a, ante nullam tempus, mattis...</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque pellentesque at amet congue integer eget. At a, ante nullam tempus, mattis in aenean a. Volutpat bibendum sit egestas ultrices  Neque pellentesque at amet congue integer eget. At a, ante nullam tempus, mattis...</p>
         </article>
-      </Box>
+      </StyledArticle>
     </StyledBox>
   )
 }

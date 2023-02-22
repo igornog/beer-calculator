@@ -2,6 +2,15 @@
 import { Box, FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import * as React from 'react';
 import { GlobalContext } from '../../context/GlobalContext';
+import styled from 'styled-components';
+
+const StyledFormControl = styled(FormControl)`
+  label {
+    span {
+      font-size: 12px;
+    }
+  }
+`
 
 const SizeOptions: React.FunctionComponent<Props> = (
   props: Props
@@ -13,7 +22,7 @@ const SizeOptions: React.FunctionComponent<Props> = (
   };
 
   return (
-    <FormControl>
+    <StyledFormControl>
       {/* <FormLabel id="radio-buttons-group-label">Tamanho</FormLabel> */}
       <RadioGroup
         defaultValue="355"
@@ -26,7 +35,7 @@ const SizeOptions: React.FunctionComponent<Props> = (
           <FormControlLabel value="600" control={<Radio />} label="Garrafa (600ml)" />
         </Box>
       </RadioGroup>
-    </FormControl>
+    </StyledFormControl>
   )
 }
 

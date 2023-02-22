@@ -12,7 +12,6 @@ const StyledBox = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 250px;
-  margin: 0 0 50px;
   padding: 5px;
   align-items: center;
   justify-content: center;

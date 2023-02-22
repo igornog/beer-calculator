@@ -9,7 +9,7 @@ const ItemRow: React.FunctionComponent<Props> = (
   const { setModalOn } = React.useContext(GlobalContext)
 
   return (
-    <Box className='itemRow' display={'flex'} gap={'15px'} alignItems={'center'} width={props.myBeer ? '20%' : 'auto'}>
+    <Box className='itemRow' display={'flex'} gap={'15px'} alignItems={'center'} width={props.myBeer ? '50%' : 'auto'}>
       <p>Quantas cervejas?</p>
       {props.myBeer ?
         <TextField
