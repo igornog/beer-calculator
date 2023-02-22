@@ -2,30 +2,32 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
-export default function DurationSlider() {
-  const [value, setValue] = React.useState(50)
+const DurationSlider: React.FunctionComponent<Props> = (
+  props: Props
+) => {
+
+  const handleChange = (event: Event, newValue: number | number[]) => {
+    props.setPreferences(newValue as number);
+  };
 
   const marks = [
     {
       value: 1,
-      label: `${value}% Cerveja`,
+      label: `${props.preferences > 0 ? `${props.preferences}%`: '' } Cerveja`,
     },
     {
       value: 100,
-      label: `${100 - value}% Drinks`,
+      label: `${props.preferences > 0 ? `${100 - props.preferences}%`: '' } Drinks`,
     }
   ];
-
-  const handleChange = (event: Event, newValue: number | number[]) => {
-    setValue(newValue as number);
-  };
 
   return (
     <Box sx={{ width: '100%' }}>
       <Slider
-        defaultValue={50}
+        defaultValue={0}
         onChange={handleChange}
         step={1}
+        disabled={props.disabled}
         min={0}
         max={100}
         marks={marks}
@@ -35,3 +37,12 @@ export default function DurationSlider() {
     </Box>
   );
 }
+
+interface Props {
+  setPreferences: (preferences: number) => void
+  preferences: number
+  disabled: boolean
+}
+
+
+export default DurationSlider

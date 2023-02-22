@@ -27,8 +27,9 @@ const DrinkerLevelSlider: React.FunctionComponent<Props> = (
   return (
     <Box sx={{ width: '100%' }}>
       <Slider
-        defaultValue={2}
+        defaultValue={0}
         step={1}
+        disabled={props.disabled}
         max={3}
         min={1}
         marks={marks}
@@ -40,6 +41,7 @@ const DrinkerLevelSlider: React.FunctionComponent<Props> = (
 
 interface Props {
   setLevel: (level: number) => void
+  disabled: boolean
 }
 
 export default DrinkerLevelSlider

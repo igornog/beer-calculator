@@ -27,9 +27,9 @@ const Header: React.FunctionComponent = () => {
     <header>
       <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-beers-brewery-flaticons-lineal-color-flat-icons.png" alt='logo' />
       {myBeer ?
-      <Box>
-        <StyledButton onClick={() => setCartOn(true)} ><MoneySend />        <h4>Total: R$ 140,09</h4></StyledButton>
-      </Box> : null }
+        <Box>
+          <StyledButton onClick={() => setCartOn(true)} ><MoneySend />        <h4>Total: R$ 140,09</h4></StyledButton>
+        </Box> : null}
     </header>
   )
 }

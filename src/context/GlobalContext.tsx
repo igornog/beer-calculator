@@ -35,9 +35,9 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
   const [modalOn, setModalOn] = useState(false);
   const [cartOn, setCartOn] = useState(false);
   const [invitees, setInvitees] = useState(0);
-  const [duration, setDuration] = useState(4);
-  const [preferences, setPreferences] = useState(0.50);
-  const [level, setLevel] = useState(2);
+  const [duration, setDuration] = useState(0);
+  const [preferences, setPreferences] = useState(0);
+  const [level, setLevel] = useState(0);
   const [myBeer, setMyBeer] = useState('');
   const [size, setSize] = useState('355');
 

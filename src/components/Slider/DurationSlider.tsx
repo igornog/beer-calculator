@@ -18,10 +18,11 @@ const DurationSlider: React.FunctionComponent<Props> = (
   return (
     <Box sx={{ width: '100%' }}>
       <Slider
-        defaultValue={4}
+        defaultValue={0}
         step={1}
+        disabled={props.disabled}
         marks={marks}
-        min={1}
+        min={0}
         max={10}
         valueLabelDisplay="auto"
         onChange={handleChange}
@@ -32,6 +33,7 @@ const DurationSlider: React.FunctionComponent<Props> = (
 
 interface Props {
   setDuration: (duration: number) => void
+  disabled: boolean
 }
 
 export default DurationSlider
