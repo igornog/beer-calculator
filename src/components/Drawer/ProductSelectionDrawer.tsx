@@ -24,7 +24,7 @@ const ProductSelectionDrawer: React.FunctionComponent<Props> = (
       }}
       PaperProps={{
         style: {
-          width: 'calc(100% - 15vw)',
+          width: 'calc(100% - 40vw)',
           boxShadow: 'none',
         },
       }}

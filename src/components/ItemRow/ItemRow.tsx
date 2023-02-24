@@ -2,6 +2,18 @@ import * as React from 'react';
 import { Box, Button, TextField } from '@mui/material';
 import { DrinkTypes } from '../../utils/types';
 import { GlobalContext } from '../../context/GlobalContext';
+import styled from 'styled-components';
+
+const StyledBox = styled(Box)`
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  
+  input {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+`
 
 const ItemRow: React.FunctionComponent<Props> = (
   props: Props
@@ -9,14 +21,14 @@ const ItemRow: React.FunctionComponent<Props> = (
   const { setModalOn } = React.useContext(GlobalContext)
 
   return (
-    <Box className='itemRow' display={'flex'} gap={'15px'} alignItems={'center'} width={props.myBeer ? '50%' : 'auto'}>
+    <StyledBox width={props.myBeer ? '50%' : 'auto'}>
       <p>Quantas cervejas?</p>
       {props.myBeer ?
         <TextField
           InputProps={{
             inputProps: { 
               min: 0,
-              readOnly: true
+              readOnly: true,
              }
           }}
           placeholder='Escolha a tamanho'
@@ -26,7 +38,7 @@ const ItemRow: React.FunctionComponent<Props> = (
         :
         <Button variant="contained" onClick={() => setModalOn(true)}>Escolher marca</Button>
       }
-    </Box>
+    </StyledBox>
   )
 }
 

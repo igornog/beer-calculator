@@ -17,7 +17,7 @@ export const blue3 = 'rgba(104, 109, 241, 0.4)';
 export const blue4 = 'rgba(104, 109, 241, 0.2)';
 export const blue5 = 'rgba(104, 109, 241, 0.1)';
 
-export const green = '#3FE897';
+export const green = '#22c55e';
 export const green1 = 'rgba(63, 232, 151, 0.8)';
 export const green2 = 'rgba(63, 232, 151, 0.6)';
 export const green3 = 'rgba(63, 232, 151, 0.4)';
@@ -26,3 +26,5 @@ export const green5 = 'rgba(63, 232, 151, 0.1)';
 
 export const red = '#E24928';
 export const red1 = '#FEF6F4';
+
+export const purple = '#7e22ce';

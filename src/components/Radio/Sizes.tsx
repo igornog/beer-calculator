@@ -6,8 +6,9 @@ import styled from 'styled-components';
 
 const StyledFormControl = styled(FormControl)`
   label {
+    flex-direction: column-reverse;
     span {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 `
@@ -22,15 +23,15 @@ const SizeOptions: React.FunctionComponent<Props> = (
   };
 
   return (
-    <StyledFormControl>
+    <StyledFormControl >
       {/* <FormLabel id="radio-buttons-group-label">Tamanho</FormLabel> */}
       <RadioGroup
         defaultValue="355"
         value={size}
         onChange={handleChange}
       >
-        <Box display={'flex'} flexDirection={'row'}>
-          <FormControlLabel value="355" control={<Radio />} label="Lata (355ml)" />
+        <Box display={'flex'} flexDirection={'row'} gap={'20px'}>
+          <FormControlLabel value="355" control={<Radio />} label="Lata (350ml)" />
           <FormControlLabel value="330" control={<Radio />} label="Long Neck (330ml)" />
           <FormControlLabel value="600" control={<Radio />} label="Garrafa (600ml)" />
         </Box>

@@ -6,7 +6,7 @@ import { GlobalContext } from '../../context/GlobalContext';
 import { DrinkTypes } from '../../utils/types';
 import { calculateMyBeer } from '../../utils/helpers';
 import styled from 'styled-components';
-import { grey3, grey5, white } from '../../utils/colors';
+import { black, green, grey3, grey5, purple, white } from '../../utils/colors';
 import { Edit } from 'iconsax-react';
 import SizeOptions from '../../components/Radio/Sizes';
 
@@ -30,12 +30,14 @@ const StyledDrinkBox = styled(Box)`
   display: flex;
   align-items: center;
   gap: 15px;
-  border: solid 1px ${grey3};
+  border: solid 1px ${purple};
   border-radius: 12px;
-  padding: 12px 24px;
+  padding: 24px;
 
-  h3{
-    margin: 0;
+  svg {
+    color: #7e22ce;
+    width: 20px;
+    cursor: pointer;
   }
 `
 
@@ -46,8 +48,22 @@ const Calculator: React.FunctionComponent<Props> = (
 
   return (
     <StyledBox className='calculator'>
-      <Box display={'flex'} flexDirection={'column'} margin={'50px 0'} gap={'50px'} width={'65%'}>
+      <Box display={'flex'} flexDirection={'column'} gap={'50px'} width={'65%'}>
         <StyledDrinkBox>
+          <Box display={'flex'} flexDirection={'row'} gap={'30px'} alignItems={'center'} justifyContent={'space-between'}>
+            <ItemRow setModal={props.setModalOn} type={DrinkTypes.Beer} beersQty={calculateMyBeer(invitees, duration, size, level)} myBeer={myBeer} size={size} />
+            {myBeer ?
+              <Box display={'flex'} flexDirection={'column'} alignSelf={'end'}>
+                <Box display={'flex'} alignItems={'center'} gap={'10px'} justifyContent={'center'}>
+                  <h3>{myBeer}</h3>
+                  <Edit onClick={() => setModalOn(true)} />
+                </Box>
+                <SizeOptions />
+              </Box>
+              : null}
+          </Box>
+        </StyledDrinkBox>
+        {/* <StyledDrinkBox>
           <Box display={'flex'} flexDirection={'row'} gap={'30px'} alignItems={'flex-end'} justifyContent={'space-between'}>
             <ItemRow setModal={props.setModalOn} type={DrinkTypes.Beer} beersQty={calculateMyBeer(invitees, duration, size, level)} myBeer={myBeer} size={size} />
             {myBeer ?
@@ -74,21 +90,7 @@ const Calculator: React.FunctionComponent<Props> = (
               </Box>
               : null}
           </Box>
-        </StyledDrinkBox>
-        <StyledDrinkBox>
-          <Box display={'flex'} flexDirection={'row'} gap={'30px'} alignItems={'flex-end'} justifyContent={'space-between'}>
-            <ItemRow setModal={props.setModalOn} type={DrinkTypes.Beer} beersQty={calculateMyBeer(invitees, duration, size, level)} myBeer={myBeer} size={size} />
-            {myBeer ?
-              <Box display={'flex'} flexDirection={'column'} alignSelf={'end'}>
-                <Box display={'flex'} alignItems={'center'} gap={'10px'} justifyContent={'center'}>
-                  <h3>{myBeer}</h3>
-                  <Edit onClick={() => setModalOn(true)} />
-                </Box>
-                <SizeOptions />
-              </Box>
-              : null}
-          </Box>
-        </StyledDrinkBox>
+        </StyledDrinkBox> */}
         <Box display={'flex'}>
           <Button
             className='add-other'

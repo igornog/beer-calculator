@@ -1,20 +1,21 @@
 import { createTheme } from '@mui/material';
 import '../styles/layout.css';
-import { black, green, grey, red } from '../colors';
+import { green, purple, red } from '../colors';
 
 export const myAppTheme = createTheme({
   palette: {
     primary: {
-      main: black,
+      main: purple,
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: green,
     },
     success: {
       main: green,
     },
     error: {
       main: red,
-    },
-    secondary: {
-      main: grey,
     },
   },
   breakpoints: {

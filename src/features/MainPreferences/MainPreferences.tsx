@@ -5,14 +5,15 @@ import DurationSlider from '../../components/Slider/DurationSlider';
 import PreferenceSlider from '../../components/Slider/PreferenceSlider';
 import styled from 'styled-components'
 import DrinkerLevelSlider from '../../components/Slider/DrinkerLevelSlider';
-import { grey5 } from '../../utils/colors';
+import { grey5, purple } from '../../utils/colors';
 import InfoBox from '../../components/InfoBox/InfoBox';
 
 const StyledBox = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 250px;
-  padding: 5px;
+  padding: 25px 50px;
+  margin: 0 0 50px;
   align-items: center;
   justify-content: center;
   border: solid 1px ${grey5};
@@ -30,7 +31,7 @@ const MainPreferences: React.FunctionComponent = () => {
   const { setInvitees, setDuration, setLevel, setPreferences, invitees, duration, preferences, level } = React.useContext(GlobalContext)
 
   return (
-    <Box display={'flex'} justifyContent={'space-around'} gap={'10px'} alignItems={'flex-start'}>
+    <Box display={'flex'} justifyContent={'space-between'} gap={'10px'} alignItems={'flex-start'}>
       <StyledBox flexDirection={'column'} width={'100px'}>
         <h4>Convidados</h4>
         <StyledTextField
