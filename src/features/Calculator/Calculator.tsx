@@ -6,7 +6,7 @@ import { GlobalContext } from '../../context/GlobalContext';
 import { DrinkTypes } from '../../utils/types';
 import { calculateMyBeer } from '../../utils/helpers';
 import styled from 'styled-components';
-import { black, green, grey3, grey5, purple, white } from '../../utils/colors';
+import { grey5, purple, white } from '../../utils/colors';
 import { Edit } from 'iconsax-react';
 import SizeOptions from '../../components/Radio/Sizes';
 

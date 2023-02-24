@@ -5,14 +5,14 @@ import DurationSlider from '../../components/Slider/DurationSlider';
 import PreferenceSlider from '../../components/Slider/PreferenceSlider';
 import styled from 'styled-components'
 import DrinkerLevelSlider from '../../components/Slider/DrinkerLevelSlider';
-import { grey5, purple } from '../../utils/colors';
+import { grey5 } from '../../utils/colors';
 import InfoBox from '../../components/InfoBox/InfoBox';
 
 const StyledBox = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 250px;
-  padding: 25px 50px;
+  padding: 25px 50px 75px;
   margin: 0 0 50px;
   align-items: center;
   justify-content: center;
