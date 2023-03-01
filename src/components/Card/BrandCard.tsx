@@ -21,7 +21,6 @@ const StyledCard = styled(Card)`
     margin-top: 0;
   }
 `
-
 const BrandCard: React.FunctionComponent<Props> = (
   props: Props
 ) => {
