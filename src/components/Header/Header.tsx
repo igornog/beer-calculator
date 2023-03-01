@@ -49,7 +49,7 @@ const StyledLogo = styled.img`
   }
 `
 
-const Header: React.FunctionComponent = () => {
+export const Header: React.FunctionComponent = () => {
   const { setCartOn, myBeer } = React.useContext(GlobalContext)
 
   return (
@@ -65,4 +65,3 @@ const Header: React.FunctionComponent = () => {
     </header>
   )
 }
-export default Header

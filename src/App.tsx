@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Header from './components/Header/Header';
+import { Header } from './components/Header/Header';
 import MainPreferences from './features/MainPreferences/MainPreferences';
 import Calculator from './features/Calculator/Calculator';
 import ProductSelectionDrawer from './components/Drawer/ProductSelectionDrawer';
