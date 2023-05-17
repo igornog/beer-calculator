@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Beer Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="1418" alt="Captura de Tela 2023-05-17 às 17 25 23" src="https://github.com/igornog/beer-calculator/assets/29484089/06b390b7-e950-42d9-90cc-f11782300f24">
 
 ## Available Scripts
 
